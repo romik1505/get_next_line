@@ -6,7 +6,7 @@
 #    By: cniranye <cniranye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 14:36:18 by cniranye          #+#    #+#              #
-#    Updated: 2019/09/26 22:11:29 by cniranye         ###   ########.fr        #
+#    Updated: 2019/11/28 22:28:57 by cniranye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,9 @@ SRC_F	+= 	ft_lstadd.c ft_lstdel.c\
 
 SRC_F	+= 	ft_strnlen.c ft_isspace.c\
 			ft_itoa_base.c ft_putll_base_fd.c\
-			ft_strrev.c ft_intlen_base.c
+			ft_strrev.c ft_intlen_base.c\
+			ft_strdup_safe.c ft_strchr_safe.c\
+			ft_realloc.c
 
 OBJS	= 	$(SRC_F:%.c=%.o)
 
