@@ -2,15 +2,26 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include "libft/libft.h"
 #include "get_next_line.h"
+#include "stdio.h"
 
-int				main(void)
+int				main(int argc, char **argv)
 {
 	char		*line = NULL;
-	int			fd = open("./srcs/gnl/gnl10.txt", O_RDONLY);
+	char		*filename = ft_strdup(argv[1]);
+	int			fd = open(filename, O_RDONLY);
+	int 		res = 0;
 
-	get_next_line(fd, &line);
+	while(res = get_next_line(fd, &line) == 1)
+	{
+		printf("Result[%d]: %s\n", res, line);
+		free(line);
+	}
+	printf("Result[%d]: %s\n", res, line);
+	free(line);
 	close(fd);
-	sleep(15);
+	free(filename);
+	//sleep(15);
 	return (0);
 }

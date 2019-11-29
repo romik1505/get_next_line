@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cniranye <cniranye@student.42.fr>          +#+  +:+       +#+         #
+#    By: cniranye <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 14:36:18 by cniranye          #+#    #+#              #
-#    Updated: 2019/11/28 22:28:57 by cniranye         ###   ########.fr        #
+#    Updated: 2019/11/29 11:38:37 by cniranye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	= 	libft.a
 CC 		= 	gcc 
-FLAGS 	= 	-Wall -Wextra -Werror
+FLAGS 	= 	-Wall -Wextra 
 
 SRC_F	=	ft_atoi.c ft_bzero.c\
 			ft_isalnum.c ft_isalpha.c\
