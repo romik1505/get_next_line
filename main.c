@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <fcntl.h>
+#include "fcntl.h"
 #include <unistd.h>
 #include "libft/libft.h"
 #include "get_next_line.h"
@@ -9,19 +9,23 @@
 int				main(int argc, char **argv)
 {
 	char		*line = NULL;
-	char		*filename = ft_strdup(argv[1]);
-	int			fd = open(filename, O_RDONLY);
+	int			fd; 
 	int 		res = 0;
+	int 		numline = 0;
 
-	while(res = get_next_line(fd, &line) == 1)
+	for (int i = 1; i < argc; ++i)
 	{
-		printf("Result[%d]: %s\n", res, line);
+		numline = 1;
+		printf("FILE[%s]\n", argv[i]);
+		fd = open(argv[i], O_RDONLY);
+		while((res = get_next_line(fd, &line)) == 1)
+		{
+			printf("Result[%d] LINE[%3d]: %s\n", res, numline++, line);
+			free(line);
+		}
+		printf("Result[%d]: %s\n\n", res, line);
 		free(line);
+		close(fd);
 	}
-	printf("Result[%d]: %s\n", res, line);
-	free(line);
-	close(fd);
-	free(filename);
-	//sleep(15);
 	return (0);
 }
